@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secret File 💌</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #fff0f5;
+    }
+    h1 {
+      color: #d63384;
+    }
+    #passwordBox {
+      margin-top: 30px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ffb6c1;
+      color: white;
+      border: none;
+    }
+    img {
+      width: 180px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+    #message {
+      color: red;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Background Music (autoplays, but muted by default for browser policy) -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- 🖼 Cute GIF -->
+  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute Cat">
+  
+  <h1>Hey there! 🐾</h1>
+  <p>You found a hidden surprise! Enter the magic password below to unlock it 💖</p>
+
+  <div id="passwordBox">
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const correctPassword = "STALK";  // Set your desired password here
+      const input = document.getElementById("password").value;
+
+      if (input === correctPassword) {
+        window.location.href = "https://drive.google.com/file/d/1sphg_eq2zGh78lWUOE8avKWMDMmZ12Ud/view?usp=sharing";  // Replace with your actual Drive link
+      } else {
+        document.getElementById("message").innerText = "Oops! Wrong password 🐾";
+      }
+    }
+
+    // Optional: Play sound on interaction to satisfy browser autoplay policies
+    document.body.addEventListener("click", () => {
+      const music = document.getElementById("bg-music");
+      music.muted = false;
+      music.play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
